@@ -29,11 +29,17 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import com.example.vaiojun.dimension4.R;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import static android.Manifest.permission.READ_CONTACTS;
 
@@ -67,13 +73,22 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
 
     //FIREBASE AUTH Variables
+    private FirebaseAuth auth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        //get firebase auth instance
+        auth  = FirebaseAuth.getInstance();
+        //check if user is logged in, start activity instead
+        if (auth.getCurrentUser() != null) {
+            startActivity(new Intent(LoginActivity.this, MainPageActivity.class));
+            finish();
+        }
+
         // Set up the login form.
-        mEmailView = (AutoCompleteTextView) findViewById(R.id.input_user);
+        mEmailView = (AutoCompleteTextView) findViewById(R.id.input_email);
         populateAutoComplete();
 
         mPasswordView = (EditText) findViewById(R.id.input_password);
@@ -320,17 +335,11 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             } catch (InterruptedException e) {
                 return false;
             }
+            //authentication through firebase
+            auth.signInWithEmailAndPassword(mEmail,mPassword); // seems like this line does not really do authentication, need to check
+            if (auth.getCurrentUser() == null) return true;
+            else return false;
 
-            for (String credential : DUMMY_CREDENTIALS) {
-                String[] pieces = credential.split(":");
-                if (pieces[0].equals(mEmail)) {
-                    // Account exists, return true if the password matches.
-                    return pieces[1].equals(mPassword);
-                }
-            }
-
-            // TODO: register the new account here.
-            return false;
         }
 
         @Override
@@ -343,7 +352,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                 Intent toMain = new Intent(LoginActivity.this, MainPageActivity.class);
                 LoginActivity.this.startActivity(toMain);
             } else {
-                mPasswordView.setError(getString(R.string.error_incorrect_password));
+                mPasswordView.setError(getString(R.string.auth_failed));
                 mPasswordView.requestFocus();
             }
         }
@@ -355,4 +364,5 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         }
     }
 }
+
 
