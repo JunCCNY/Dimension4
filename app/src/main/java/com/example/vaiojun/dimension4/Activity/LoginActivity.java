@@ -337,7 +337,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             }
             //authentication through firebase
             auth.signInWithEmailAndPassword(mEmail,mPassword); // seems like this line does not really do authentication, need to check
-            if (auth.getCurrentUser() == null) return true;
+            if (auth.getCurrentUser() != null) return true;
             else return false;
 
         }
