@@ -335,12 +335,30 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             } catch (InterruptedException e) {
                 return false;
             }
+            boolean successLogin = false;
+            auth.signInWithEmailAndPassword(mEmail, mPassword)
+                    .addOnCompleteListener(LoginActivity.this, new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            // If sign in fails, display a message to the user. If sign in succeeds
+                            // the auth state listener will be notified and logic to handle the
+                            // signed in user can be handled in the listener.
+
+                            if (!task.isSuccessful()) {
+                                Toast.makeText(LoginActivity.this, getString(R.string.auth_failed), Toast.LENGTH_LONG).show();
+                            }
+                        }
+                    });
+            return true;
+
             //authentication through firebase
+            /*
             auth.signInWithEmailAndPassword(mEmail,mPassword); // seems like this line does not really do authentication, need to check
             if (auth.getCurrentUser() != null) return true;
             else return false;
-
+            */
         }
+
 
         @Override
         protected void onPostExecute(final Boolean success) {
@@ -356,6 +374,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                 mPasswordView.requestFocus();
             }
         }
+
 
         @Override
         protected void onCancelled() {
