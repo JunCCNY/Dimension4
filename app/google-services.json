@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "766345332249",
+    "firebase_url": "https://d-wfmstest.firebaseio.com",
+    "project_id": "d-wfmstest",
+    "storage_bucket": "d-wfmstest.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:766345332249:android:2cb4fb732d45099c",
+        "android_client_info": {
+          "package_name": "com.example.vaiojun.dimension4"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "766345332249-n35vm0ugcl4kedbosk5bau9hhf7c32ep.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.vaiojun.dimension4",
+            "certificate_hash": "AF0F7B5FE5EF0E500556ABB3AF60C04563B4950E"
+          }
+        },
+        {
+          "client_id": "766345332249-bu5f7kf9s5e9qaes6ifs2id6rs14ioca.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBeu5Fahc3-46zew78hJ1OfntG1xzo13mw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "766345332249-bu5f7kf9s5e9qaes6ifs2id6rs14ioca.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
