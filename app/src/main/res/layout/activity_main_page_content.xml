@@ -34,7 +34,7 @@
 
             <android.support.v7.widget.CardView
                 xmlns:card_view="http://schemas.android.com/apk/res-auto"
-                android:id="@+id/card_view_1"
+                android:id="@+id/task"
                 android:layout_width="0dp"
                 android:layout_height="@dimen/card_height"
                 android:layout_columnWeight="1"
@@ -45,7 +45,7 @@
                 >
 
                 <TextView
-                    android:text="CARD VIEW 1"
+                    android:text="Task"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" />
 
@@ -53,7 +53,7 @@
 
             <android.support.v7.widget.CardView
                 xmlns:card_view="http://schemas.android.com/apk/res-auto"
-                android:id="@+id/card_view_2"
+                android:id="@+id/schedule"
                 android:layout_width="0dp"
                 android:layout_height="@dimen/card_height"
                 android:layout_columnWeight="1"
@@ -64,7 +64,7 @@
                 >
 
                 <TextView
-                    android:text="CARD VIEW 2"
+                    android:text="Schedule"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" />
 
@@ -73,7 +73,7 @@
 
             <android.support.v7.widget.CardView
                 xmlns:card_view="http://schemas.android.com/apk/res-auto"
-                android:id="@+id/card_view_3"
+                android:id="@+id/reminder"
                 android:layout_width="0dp"
                 android:layout_height="@dimen/card_height"
                 android:layout_columnWeight="1"
@@ -84,7 +84,7 @@
                 >
 
                 <TextView
-                    android:text="CARD VIEW 3"
+                    android:text="Reminder"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" />
 
@@ -92,7 +92,7 @@
 
             <android.support.v7.widget.CardView
                 xmlns:card_view="http://schemas.android.com/apk/res-auto"
-                android:id="@+id/card_view_4"
+                android:id="@+id/todo"
                 android:layout_width="0dp"
                 android:layout_height="@dimen/card_height"
                 android:layout_columnWeight="1"
@@ -103,7 +103,7 @@
                 >
 
                 <TextView
-                    android:text="CARD VIEW 4"
+                    android:text="To DO"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:id="@+id/textView" />
@@ -113,7 +113,7 @@
 
             <android.support.v7.widget.CardView
                 xmlns:card_view="http://schemas.android.com/apk/res-auto"
-                android:id="@+id/card_view_5"
+                android:id="@+id/my_learning"
                 android:layout_width="0dp"
                 android:layout_height="@dimen/card_height"
                 android:layout_columnWeight="1"
@@ -123,7 +123,7 @@
                 >
 
                 <TextView
-                    android:text="CARD VIEW 5"
+                    android:text="My Learning"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" />
 
@@ -131,7 +131,7 @@
 
             <android.support.v7.widget.CardView
                 xmlns:card_view="http://schemas.android.com/apk/res-auto"
-                android:id="@+id/card_view_6"
+                android:id="@+id/announcement"
                 android:layout_width="0dp"
                 android:layout_height="@dimen/card_height"
                 android:layout_columnWeight="1"
@@ -140,7 +140,7 @@
                 card_view:cardCornerRadius="4dp">
 
                 <TextView
-                    android:text="CARD VIEW 6"
+                    android:text="Announcement"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" />
 
@@ -149,7 +149,7 @@
 
             <android.support.v7.widget.CardView
                 xmlns:card_view="http://schemas.android.com/apk/res-auto"
-                android:id="@+id/card_view_7"
+                android:id="@+id/settings"
                 android:layout_width="0dp"
                 android:layout_height="@dimen/card_height"
                 android:layout_columnWeight="1"
@@ -158,7 +158,7 @@
                 card_view:cardCornerRadius="4dp">
 
                 <TextView
-                    android:text="CARD VIEW 7"
+                    android:text="Settings"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" />
 
@@ -166,7 +166,7 @@
 
             <android.support.v7.widget.CardView
                 xmlns:card_view="http://schemas.android.com/apk/res-auto"
-                android:id="@+id/card_view_8"
+                android:id="@+id/user_profile"
                 android:layout_width="0dp"
                 android:layout_height="@dimen/card_height"
                 android:layout_columnWeight="1"
@@ -175,7 +175,7 @@
                 card_view:cardCornerRadius="4dp">
 
                 <TextView
-                    android:text="CARD VIEW 8"
+                    android:text="User Profile"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" />
 
