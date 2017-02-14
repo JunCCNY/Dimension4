@@ -1,5 +1,6 @@
 package com.example.vaiojun.dimension4.Activity;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
@@ -18,8 +19,10 @@ import com.example.vaiojun.dimension4.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+
+
 public class MainPageActivity extends AppCompatActivity
-        {
+        implements NavigationView.OnNavigationItemSelectedListener{
 
 
     //variables declaration
@@ -42,14 +45,15 @@ public class MainPageActivity extends AppCompatActivity
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
             //check if user logged in or not
                 FirebaseUser user = firebaseAuth.getCurrentUser();
-                if (user != null){
-
+                if (user == null){
+                    //Intent toLogin = new Intent(MainPageActivity.this, LoginActivity.class);
+                    //MainPageActivity.this.startActivity(toLogin);
                 }
             }
         };
 
 
-/*        //set navigation drawer
+       //set navigation drawer
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -60,7 +64,7 @@ public class MainPageActivity extends AppCompatActivity
         toggle.syncState();
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);*/
+        navigationView.setNavigationItemSelectedListener(this);
     }
 
     @Override
@@ -77,7 +81,7 @@ public class MainPageActivity extends AppCompatActivity
         mFirebaseAuth.addAuthStateListener(mAuthStateListener);
     }
 
-/*    // TODO: navigation item selected
+   // TODO: navigation item selected
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -110,7 +114,22 @@ public class MainPageActivity extends AppCompatActivity
         return super.onOptionsItemSelected(item);
     }
     @Override
-    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        return false;
-    } */
+    public boolean onNavigationItemSelected(MenuItem item) {
+        // Handle navigation view item clicks here.
+        int id = item.getItemId();
+
+        if (id == R.id.nav_home) {
+            // Handle the camera action
+        } else if (id == R.id.nav_progress) {
+
+        } else if (id == R.id.nav_setting) {
+
+        } else if (id == R.id.nav_log_out) {
+
+        }
+
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawer.closeDrawer(GravityCompat.START);
+        return true;
+    }
 }

@@ -15,10 +15,10 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        tools:replace="android:supportsRtl">
+        tools:replace="android:supportsRtl"
         >
         <activity android:name=".Activity.LoginActivity"
-            android:label="@string/title_activity_login">
+            android:label="Dimension 4">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -28,7 +28,8 @@
 
         <activity
             android:name=".Activity.MainPageActivity"
-
+            android:label="Dimension 4"
+            android:theme="@style/AppTheme.NoActionBar"
             ></activity>
     </application>
 
